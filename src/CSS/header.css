@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+
+}
+
+header {
+  position: relative;
+  width: 100%;
+  background-color: brown;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 25px;
+  box-sizing: border-box;
+  
+}
+
+#logo {
+  width: 100%;
+  /* border: black 2px solid; */
+  display: flex;
+  flex-direction: row;
+
+}
+
+.inner-logo {
+  display: flex;
+  flex-direction: row;
+  margin-top: 7.5%;
+  margin-left: 22px;
+  scale: 1.15;
+
+}
+
+img {
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  margin-right: 10px;
+}
+
+
+.onglets li {
+  border-right: #daa7a7 2px solid;
+  padding: 0 15px;
+  margin: 0;
+  color: #daa7a7;
+}
+
+.onglets li:last-child{
+  border: none;
+}
+
+header a {
+  text-decoration: none;
+  color: #daa7a7;
+}
+
+header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none; 
+}
+
+header ul li {
+  margin: 0 10px 0;
+}
+
+
+header {
+  /* position:fixed; */
+  top:0;
+  width:100%;
+
+}
+
+#searchBar {
+  height: 20px;
+  width: 100px;
+  padding-right: 100px;
+  margin: 15px 0px 0 0;
+  position: relative;
+  position: 85%;
+}
+
+.hvr-shrink {
+  transition: transform 0.2s;
+}
+
+.hvr-shrink :hover {
+  transform: scale(0.95);
+}
+
+.profileToggleBtn {
+  display: flex;
+  color: #daa7a7;
+  border: none;
+  background: none!important;
+  /* border: 2px solid #daa7a774; */
+  padding: 0!important;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 10px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.popUpHeader {
+  margin-bottom: 8px;
+}
+
+.profilePopUp {
+  position: absolute;
+  color: #471c0f;
+  top:100%;
+  right: 1%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  background-color: #f4c664b2;
+  border: #672815 2px solid;
+
+}
+
+.profilePopUp button{
+ background-color: #9e87540f;
+ border: none;
+}

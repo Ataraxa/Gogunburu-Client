@@ -1,0 +1,20 @@
+.minigame {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding-top: 60px;
+}
+
+#cardToDiscover {
+    display: inline;
+    background-color: antiquewhite;
+    margin: 0 40% 0;
+    border:beige 2px solid;
+    border-radius: 3px;
+    padding: 20px;
+    width: 100%;
+}
+
+.iputBar {
+    border: black 4>px solid;
+}

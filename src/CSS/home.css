@@ -1,0 +1,63 @@
+table {
+    margin: auto;
+    padding-top: 58px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+table ul {
+    text-align: center;
+    margin-right: 16px;
+    margin-left: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 0;
+    }
+
+table td:hover {
+    background-color: rgba(237, 146, 146, 0.524);
+}
+
+table li {
+    list-style: none;
+    margin: auto;
+}
+
+table td{
+    border: black 2px solid;
+    border-radius: 3px;
+    background-color: rgba(255, 240, 240, 0.768);
+}
+
+table ul :nth-child(1) {
+    font-size: 35px;
+}
+
+table ul :nth-child(2) {
+    font-size: 13px;
+}
+
+#popout {
+    z-index:2;
+    background-color: black;
+    height: 200px;
+    width: 200px;
+    top: 10%;
+    left: 70%;
+    color: white;
+    position:fixed;
+}
+
+#popout img {
+    
+}
+
+.hidden {
+    display: none;
+}
+
+.showed {
+    display: inline-block;
+}
+
+

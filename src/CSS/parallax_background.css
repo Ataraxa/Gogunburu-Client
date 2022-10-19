@@ -1,0 +1,32 @@
+.static {
+    background-size: 100%;
+    background-color: bisque;
+    background-image: url(./wave_layers/wave\ -\ Copie.jpg);
+    background-repeat: no-repeat;
+}
+
+.parallax {
+    /* position: relative; */
+    background-size: 110%;
+    background-color: bisque;
+    background-image:
+    url(./wave_layers/layer_05.png),
+    url(./wave_layers/layer_04.png),
+    url(./wave_layers/layer_03.png),
+    url(./wave_layers/layer_02.png),
+    url(./wave_layers/layer_01.png),
+    url(./wave_layers/wave.jpg);
+
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-position: 30% 30%;
+    margin-top:  55px;
+}
+/* 
+.toggleAnimationBtn {
+    position: absolute;
+    top: 5%;
+    left: 90%;
+} */
+

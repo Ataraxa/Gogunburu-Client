@@ -1,0 +1,21 @@
+.results {
+text-transform: capitalize;
+    margin-left: 25px ;
+    padding-bottom: 20px;
+}
+
+.partOfSpeech {
+    font-size: smaller;
+    font-style: italic ;
+    color: rgb(85, 85, 85);
+}
+
+.title {
+    padding-top: 70px;
+}
+
+.mainReading {
+    /* font-size:x-large; */
+}
+
+
