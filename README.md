@@ -33,3 +33,6 @@ Learn Japanese. Quickly. Efficiently.
     - Tells you what each word does.
 
 
+## Credits
+> GitHub [@nicolasdhnr](https://github.com/nicolasdhnr/) &nbsp;&middot;&nbsp; 
+> GitHub [@ataraxa](https://github.com/ataraxa/) &nbsp;&middot;&nbsp; 
