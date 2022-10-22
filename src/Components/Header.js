@@ -90,7 +90,9 @@ export function Header() {
           <li>
             <Link to="/converter">Converter</Link>
           </li>
-          <li>Profile</li>
+          <li>
+            <Link to="/translation">Translator</Link>
+          </li>
         </ul>
       </div>
       <SearchBar />

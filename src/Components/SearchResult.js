@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { WordDisplay } from "./WordDisplay";
 
-// var cors_api_url = "https://cors-anywhere.herokuapp.com/";
-var cors_api_url = "http://0.0.0.0:3300/";
+var cors_api_url = "https://cors-anywhere.herokuapp.com/";
+// var cors_api_url = "http://0.0.0.0:3300/";
 
 async function doCORSRequest(options, printResult) {
   console.log("Fetching Data...");

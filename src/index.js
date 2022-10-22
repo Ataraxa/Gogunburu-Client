@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SearchResult } from "./Components/SearchResult";
 import { Converter } from "./Components/Converter";
 import { Training } from "./Components/Training";
+import { Translator } from "./Components/Translate";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -16,6 +17,7 @@ root.render(
       <Route path="/" element={<MainTable />} />
       <Route path="/search-results/:keyword" exact element={<SearchResult />} />
       {/* <Route path="/search-results" element={<SearchResult />} /> */}
+      <Route path="/translation" element={<Translator />} />
       <Route path="/training" element={<Training />} />
       <Route path="/converter" element={<Converter />} />
     </Routes>
