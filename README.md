@@ -4,6 +4,13 @@ Learn Japanese. Quickly. Efficiently.
 
 
 
+<p align="center">
+  <a href="#what-is-DMD?">What is DMD?</a> •
+  <a href="#key-features">Key Features</a> •
+  <a href="#how-to-use">How To Use</a> •
+  <a href="#credits">Credits</a> •
+  <a href="#license">University</a>
+</p>
 
 ## Future Features
 - Connect to DEEPL API:
