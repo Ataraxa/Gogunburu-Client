@@ -9,8 +9,8 @@ table ul {
     text-align: center;
     margin-right: 16px;
     margin-left: 16px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+
+    /* margin-bottom: 5px; */
     padding: 0;
     }
 

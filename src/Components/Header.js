@@ -42,28 +42,29 @@ export function ProfileClick() {
 }
 
 export function Header() {
-  const [user, setUser] = useState();
   const [mode, setMode] = useState();
+  const [username, setUsername] = useState();
 
   supabase.auth.onAuthStateChange((event, session) => {
-    console.log(event, session);
-    if (event === null) {
+    if (session === null) {
       setMode("not-connected");
-      console.log("disconnected pop up");
+      setUsername("N/A");
     } else {
       setMode("connected");
-      setUser(event.user);
+      setUsername(session.user.user_metadata.username);
     }
   });
 
   useEffect(() => {
     const fetchCurrentUser = async () => {
-      console.log("Fetching Username");
       const {
         data: { user },
       } = await supabase.auth.getUser();
-      console.log(user);
-      setUser(user);
+      setUsername(
+        user?.user_metadata?.username === undefined
+          ? "N/A"
+          : user?.user_metadata?.username
+      );
       user !== null ? setMode("connected") : setMode("not-connected");
     };
     fetchCurrentUser();
@@ -95,17 +96,15 @@ export function Header() {
       <SearchBar />
       <div>
         <button class="profileToggleBtn" onClick={ProfileClick}>
-          {user?.user_metadata?.username === undefined
-            ? "Not connected"
-            : user.user_metadata.username}
+          {username !== undefined ? username : "N/A"}
         </button>
       </div>
 
       <div class="profilePopUp">
         {mode === "not-connected" ? (
-          <ConnectionPopupMenu />
+          <ConnectionPopupMenu setUsername={setUsername} />
         ) : (
-          <ProfilePopUpMenu />
+          <ProfilePopUpMenu setMode={setMode} />
         )}
       </div>
     </header>

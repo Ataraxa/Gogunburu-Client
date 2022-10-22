@@ -1,7 +1,7 @@
 import "../CSS/home.css";
 import "../CSS/parallax_background.css";
 import React, { useState } from "react";
-import { Background } from "./background";
+import { Background } from "./Background";
 
 export function MainTable() {
   const ref = React.useRef(null);

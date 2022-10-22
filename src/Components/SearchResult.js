@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { WordDisplay } from "./WordDisplay";
 
-var cors_api_url = "https://cors-anywhere.herokuapp.com/";
+// var cors_api_url = "https://cors-anywhere.herokuapp.com/";
+var cors_api_url = "http://0.0.0.0:3300/";
 
 async function doCORSRequest(options, printResult) {
   console.log("Fetching Data...");
@@ -48,6 +49,8 @@ export function SearchResult() {
     } catch (err) {
       console.log(err);
     }
+    console.log("Data was fetched!!");
+    console.log(data);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

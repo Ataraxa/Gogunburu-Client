@@ -9,7 +9,6 @@ header {
   background-color: brown;
   display: flex;
   flex-direction: row;
-  margin-bottom: 25px;
   box-sizing: border-box;
   
 }

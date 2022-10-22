@@ -2,7 +2,7 @@ import { useState } from "react";
 // import { useAuth } from "../context/AuthProvider";
 import { supabase } from "../utils/supabase_api";
 
-export function ConnectionPopupMenu() {
+export function ConnectionPopupMenu(props) {
   // const { setAuth } = useAuth();
 
   const [mode, setMode] = useState("Login");
@@ -17,7 +17,7 @@ export function ConnectionPopupMenu() {
         email: email,
         password: password,
       });
-      alert("Logged in!");
+      // alert("Logged in!");
       console.log(data, error);
     } else if (mode === "Register") {
       const { data, error } = await supabase.auth.signUp({
@@ -29,7 +29,7 @@ export function ConnectionPopupMenu() {
           },
         },
       });
-      alert("User created!");
+      // alert("User created!");
       console.log(data, error);
     }
   };
