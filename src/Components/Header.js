@@ -7,8 +7,13 @@ import { ConnectionPopupMenu } from "./LoginSystem";
 import { ProfilePopUpMenu } from "./ProfilePopupMenu";
 import { supabase } from "../utils/supabase_api";
 
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Form from "react-bootstrap/Form";
 
 export function SearchBar() {
   const navigate = useNavigate();
@@ -47,6 +52,8 @@ export function ProfileClick() {
 export function Header() {
   const [mode, setMode] = useState();
   const [username, setUsername] = useState();
+  const [searchInput, setSearchInput] = useState("");
+  const navigate = useNavigate();
 
   supabase.auth.onAuthStateChange((event, session) => {
     if (session === null) {
@@ -73,48 +80,104 @@ export function Header() {
     fetchCurrentUser();
   }, []);
 
+  const changeInput = ({ target: { value } }) => {
+    setSearchInput(value);
+  };
+
+  const handleSearch = () => {
+    console.log("Hello world");
+    navigate(`/search-results/${searchInput}`);
+  };
+
+  const handleKeyPress = (target) => {
+    if (target.charCode === 13) {
+      navigate(`/search-results/${searchInput}`);
+    }
+  };
+
   return (
     <header>
-      <div id="logo">
-        <Link to="/">
-          <div class="inner-logo">
-            <img class="hvr-shrink logo-item" src={icon} alt="" />
-            <div class="hvr-shrink logo-item" id="name">
-              NihonGogombre
-            </div>
-          </div>
-        </Link>
-      </div>
-      <div class="onglets">
-        <ul>
-          <li>
-            <DropdownButton title="Kanji Training">
-              <Dropdown.Item>1</Dropdown.Item>
-              <Dropdown.Item>2</Dropdown.Item>
-            </DropdownButton>
-          </li>
-          <li>
-            <Link to="/converter">Converter</Link>
-          </li>
-          <li>
-            <Link to="/translation">Translator</Link>
-          </li>
-        </ul>
-      </div>
-      <SearchBar />
-      <div>
-        <button class="profileToggleBtn" onClick={ProfileClick}>
-          {username !== undefined ? username : "N/A"}
-        </button>
-      </div>
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        bg="#FFFFFF"
+        variant="dark"
+        style={{ width: "100%" }}
+      >
+        <Container className="mx-5 justify-content-end">
+          <Link to="/">
+            <Navbar.Brand href="#home">
+              <img class="hvr-shrink logo-item" src={icon} alt="" />
+              <span class="hvr-shrink logo-item" id="name">
+                NihonGogombre
+              </span>
+            </Navbar.Brand>
+          </Link>
 
-      <div class="profilePopUp">
-        {mode === "not-connected" ? (
-          <ConnectionPopupMenu setUsername={setUsername} />
-        ) : (
-          <ProfilePopUpMenu setMode={setMode} />
-        )}
-      </div>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="m-auto">
+              <Link className="mx-3 nav-link" to="/converter">
+                Converter
+              </Link>
+              <Link className="mx-3 nav-link" to="/translation">
+                Translator
+              </Link>
+
+              <NavDropdown
+                title="Kanji"
+                className="mx-3"
+                id="collasible-nav-dropdown"
+              >
+                <NavDropdown.Item href="#action/3.1">
+                  Add Kanji
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.1">Reading</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">Writing</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Meaning</NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+            <Form className="d-flex">
+              <Form.Control
+                type="search"
+                placeholder="Enter a word..."
+                className="me-2"
+                aria-label="Search"
+                onChange={changeInput}
+                value={searchInput}
+                onKeyPress={handleKeyPress}
+              />
+              <Button variant="outline-light" onClick={handleSearch}>
+                Search
+              </Button>
+            </Form>
+            <Nav>
+              <NavDropdown
+                title={username}
+                className="mx-3"
+                id="collasible-nav-dropdown"
+                align="end"
+              >
+                {/* <div>
+                  <button class="profileToggleBtn" onClick={ProfileClick}>
+                    {username !== undefined ? username : "N/A"}
+                  </button>
+                </div> */}
+
+                <NavDropdown.Item>
+                  {mode === "not-connected" ? (
+                    <ConnectionPopupMenu setUsername={setUsername} />
+                  ) : (
+                    <ProfilePopUpMenu setMode={setMode} />
+                  )}
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </header>
   );
 }
