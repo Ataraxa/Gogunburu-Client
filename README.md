@@ -7,6 +7,13 @@
 
 ## Current Features
 
+<p align="center">
+  <a href="#what-is-DMD?">Current Features?</a> •
+  <a href="#key-features">Future Features</a> •
+  <a href="#how-to-use">How To Use</a> •
+  <a href="#credits">Credits</a> •
+  <a href="#license">University</a>
+</p>
 
 ## Future Features
 - Connect to DEEPL API:
@@ -29,3 +36,6 @@
     - Tells you what each word does.
 
 
+## Credits
+> GitHub [@nicolasdhnr](https://github.com/nicolasdhnr/) &nbsp;&middot;&nbsp; 
+> GitHub [@ataraxa](https://github.com/ataraxa/) &nbsp;&middot;&nbsp; 
