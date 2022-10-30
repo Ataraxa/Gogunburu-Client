@@ -15,7 +15,7 @@ header {
 
 #logo {
   width: 100%;
-  /* border: black 2px solid; */
+
   display: flex;
   flex-direction: row;
 

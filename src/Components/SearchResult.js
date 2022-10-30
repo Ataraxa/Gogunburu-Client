@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { WordDisplay } from "./WordDisplay";
 
-var cors_api_url = "https://cors-anywhere.herokuapp.com/";
-// var cors_api_url = "http://0.0.0.0:3300/";
+var cors_api_url = "https://corsproxycustom.herokuapp.com/";
+// var cors_api_url = "http://localhost:8080/";
 
 async function doCORSRequest(options, printResult) {
   console.log("Fetching Data...");
@@ -35,6 +35,9 @@ export function SearchResult() {
 
   useEffect(() => {
     try {
+      console.log(
+        `Request at: ${cors_api_url}https://jisho.org/api/v1/search/words?keyword=${word.keyword} `
+      );
       doCORSRequest(
         {
           method: "GET",

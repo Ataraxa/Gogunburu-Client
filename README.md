@@ -1,8 +1,11 @@
-# GOGUNBURU - The Revolutionary Japanese Learning Website
+<h1 align="center"> GOGUNBURU - The Revolutionary Japanese Learning Website </h1>
 
-Learn Japanese. Quickly. Efficiently.
+<h4 align="center"> Learn Japanase</h4>
+
+## Motivation
 
 
+## Current Features
 
 
 ## Future Features

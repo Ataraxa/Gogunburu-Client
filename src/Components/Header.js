@@ -7,6 +7,9 @@ import { ConnectionPopupMenu } from "./LoginSystem";
 import { ProfilePopUpMenu } from "./ProfilePopupMenu";
 import { supabase } from "../utils/supabase_api";
 
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
+
 export function SearchBar() {
   const navigate = useNavigate();
   const [searchInput, setSearchInput] = useState("");
@@ -85,7 +88,10 @@ export function Header() {
       <div class="onglets">
         <ul>
           <li>
-            <Link to="/training">Training</Link>
+            <DropdownButton title="Kanji Training">
+              <Dropdown.Item>1</Dropdown.Item>
+              <Dropdown.Item>2</Dropdown.Item>
+            </DropdownButton>
           </li>
           <li>
             <Link to="/converter">Converter</Link>
