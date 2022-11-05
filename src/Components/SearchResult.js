@@ -2,6 +2,13 @@ import "../CSS/searchResult.css";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { WordDisplay } from "./WordDisplay";
+import { KanjiSidebar } from "./KanjiSidebar";
+import { KanjiDisplay } from "../Context/KanjiContext";
+
+// RBoostrap imports
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 var cors_api_url = "https://corsproxycustom.herokuapp.com/";
 // var cors_api_url = "http://localhost:8080/";
@@ -33,6 +40,21 @@ export function SearchResult() {
   let word = useParams();
   const [data, setData] = useState();
 
+  // Setting up Kanji Context
+  const setKanji = (e) => {
+    console.log(e);
+
+    setKanjiDisp(() => ({
+      kanji: e,
+      setKanji,
+    }));
+  };
+
+  const [kanjiDisp, setKanjiDisp] = useState({
+    kanji: "hi",
+    setKanji,
+  });
+
   useEffect(() => {
     try {
       console.log(
@@ -58,11 +80,22 @@ export function SearchResult() {
   }, []);
 
   return (
-    <div class="results title">
-      <h1>Search Results:</h1>
-      {data?.data.map((entry, key) => {
-        return <WordDisplay key={key} entry={entry} />;
-      })}
-    </div>
+    <KanjiDisplay.Provider value={kanjiDisp}>
+      <Container>
+        <Row>
+          <Col>
+            <div class="results title">
+              <h1>Search Results:</h1>
+              {data?.data.map((entry, key) => {
+                return <WordDisplay key={key} entry={entry} />;
+              })}
+            </div>
+          </Col>
+          <Col>
+            <KanjiSidebar />
+          </Col>
+        </Row>
+      </Container>
+    </KanjiDisplay.Provider>
   );
 }

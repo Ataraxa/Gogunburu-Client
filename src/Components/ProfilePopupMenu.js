@@ -1,4 +1,6 @@
 import { supabase } from "../utils/supabase_api";
+import Button from "react-bootstrap/Button";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 export function ProfilePopUpMenu(props) {
   const setMode = props.setMode;
@@ -14,7 +16,13 @@ export function ProfilePopUpMenu(props) {
   };
   return (
     <>
-      <button onClick={LogOutHandler}>Logout</button>
+      <Button onClick={LogOutHandler} variant="link">
+        Profile
+      </Button>
+      <NavDropdown.Divider />
+      <Button onClick={LogOutHandler} variant="link">
+        Logout
+      </Button>
     </>
   );
 }

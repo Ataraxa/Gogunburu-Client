@@ -25,7 +25,7 @@ table li {
 
 table td{
     border: black 2px solid;
-    border-radius: 3px;
+    border-radius: 10px;
     background-color: rgba(255, 240, 240, 0.768);
 }
 
@@ -46,10 +46,6 @@ table ul :nth-child(2) {
     left: 70%;
     color: white;
     position:fixed;
-}
-
-#popout img {
-    
 }
 
 .hidden {

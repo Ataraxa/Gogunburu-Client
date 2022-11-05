@@ -118,8 +118,8 @@ export function Header() {
 
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="m-auto">
-              <Link className="mx-3 nav-link" to="/converter">
-                Converter
+              <Link className="mx-3 nav-link" to="/training">
+                Training
               </Link>
               <Link className="mx-3 nav-link" to="/translation">
                 Translator
@@ -159,20 +159,16 @@ export function Header() {
                 className="mx-3"
                 id="collasible-nav-dropdown"
                 align="end"
+                onClick={ProfileClick}
+                class="profileToggleBtn"
               >
-                {/* <div>
-                  <button class="profileToggleBtn" onClick={ProfileClick}>
-                    {username !== undefined ? username : "N/A"}
-                  </button>
-                </div> */}
-
-                <NavDropdown.Item>
+                <Container class="profilePopUp">
                   {mode === "not-connected" ? (
                     <ConnectionPopupMenu setUsername={setUsername} />
                   ) : (
                     <ProfilePopUpMenu setMode={setMode} />
                   )}
-                </NavDropdown.Item>
+                </Container>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>

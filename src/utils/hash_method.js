@@ -1,7 +1,7 @@
 // Basic hash function in JavaScript
 
 export const cryptohash = (str) => {
-  console.log(str);
+  // console.log(str);
   var hash = 0,
     i,
     chr;
